@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ data.ice_cream.title }}
+{% endblock %}
+
+{% block content %}
+    <h3>Описание:</h3>
+    <p>{{ data.ice_cream.description }}</p>
+    {% if data.ice_cream.image != null %}
+        <img width="200px" height="200px" src="{% static data.ice_cream.image %}" alt="">
+    {% endif %}
+    <br>
+    <input type="button" value="Назад к списку" onclick="window.location.href = '{% url 'ice_cream_index' %}'">
+{% endblock %}

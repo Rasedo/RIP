@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Магазины{% endblock %}
+
+{% block content %}
+    <h3>Список магазинов</h3>
+    <ul>
+        {% for val in data.shops %}
+            <li>
+                <p>{{ val.name }}</p>
+                <p>{{ val.address }}</p>
+                <p><img width="200px" height="200px" src="{% static val.image %}" alt=""></p>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+    <input type="button" value="Назад в меню" onclick="window.location.href = '{% url 'home' %}';">
+{% endblock %}

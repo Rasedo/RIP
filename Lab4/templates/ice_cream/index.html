@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Каталог мороженного{% endblock %}
+
+{% block content %}
+    <h3>Список мороженного</h3>
+    <ul>
+        {% for val in data.ice_creams %}
+            <li><a href="{% url 'ice_cream_show' val.id %}">{{ val.name }}</a> </li>
+        {% empty %}
+            <li>Список пуст</li>
+        {% endfor %}
+    </ul>
+    <input type="button" value="Назад в меню" onclick="window.location.href = '{% url 'home' %}';">
+{% endblock %}

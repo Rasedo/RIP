@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h3>Главная страница</h3>
+    <ul>
+        <li><a href="{% url 'ice_cream_index' %}">Мороженное</a> </li>
+        <li><a href="{% url 'shop_index' %}">Магазины</a> </li>
+        <li><a href="{% url 'home' %}">В процессе придумывания...</a> </li>
+    </ul>
+{% endblock %}
